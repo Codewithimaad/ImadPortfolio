@@ -68,7 +68,7 @@ const Projects = () => {
                             transition={{ duration: 1.5 }} // Trigger animation every time the element comes into view
                         >
                             <motion.div
-                                className="relative bg-purple-800 rounded-xl shadow-lg p-6 transform backdrop-blur-lg bg-opacity-30"
+                                className="relative bg-purple-800 rounded-xl shadow-lg p-6 transform backdrop-blur-lg bg-opacity-30 lg:w-80"
                                 style={{ height: "420px" }} // Fixed height for all cards
                                 whileInView={{ opacity: 1, y: 0 }}
                                 initial={{ opacity: 0, y: -100 }}
