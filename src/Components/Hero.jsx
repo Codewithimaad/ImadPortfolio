@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, stagger } from "framer-motion";
-import profilePic from '../assets/Images/Imad.png';
+import profilePic from '../assets/Images/dp.jpg';
 
 const containerVariants = {
     hidden: {
@@ -28,7 +28,7 @@ const Hero = () => {
                         <motion.img
                             src={profilePic}
                             alt="Imad Khan"
-                            className="border border-stone-900 rounded-3xl"
+                            className="border border-stone-900 rounded-full"
                             width={650}
                             height={650}
                             initial={{ x: 100, opacity: 0 }}
@@ -67,9 +67,8 @@ const Hero = () => {
                         <motion.a
                             variants={childVariants}
                             href="#contact" // Assuming this is the correct section or link
-                            target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full py-3 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-green-500 hover:to-green-800 hover:shadow-green-500/50">
+                            className="inline-block bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full py-2 md:py-3 lg:py-3 sm:px-8 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-green-500 hover:to-green-800 hover:shadow-green-500/50">
                             Connect With Me
                         </motion.a>
                     </motion.div>

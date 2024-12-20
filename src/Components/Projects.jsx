@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import weatherImage from "../assets/Images/Weather.jpg";
 import currencyImage from "../assets/Images/Currency.jpg";
-import schoolImage from "../assets/Images/Luminous.jpg";
+import schoolImage from "../assets/Images/School.png";
 import portfolioImage from "../assets/Images/PortfolioPink.jpg";
+import countryImage from '../assets/Images/Country.png'
 
 const Projects = () => {
     const projectData = [
@@ -11,30 +12,38 @@ const Projects = () => {
             title: "Weather App",
             description: "A weather app built with React that provides real-time weather information.",
             image: weatherImage,
-            githubLink: "https://github.com/Imad/weather-app",
+            githubLink: "https://github.com/Codewithimaad/weather-check",
             liveLink: "https://codewithimaad.github.io/weather-check/",
         },
         {
             title: "Currency Converter",
             description: "A currency converter app using React and an external API to fetch live exchange rates.",
             image: currencyImage,
-            githubLink: "https://github.com/Imad/currency-converter",
-            liveLink: "https://imad-currency-converter.com",
+            githubLink: "https://github.com/Codewithimaad/Currency-Converter",
+            liveLink: "https://codewithimaad.github.io/Currency-Converter/",
         },
         {
             title: "School Management System",
             description: "A full-stack school management system with features like student enrollment, Attendance, Fee Entry, and Role-Based Authorization etc.",
             image: schoolImage,
-            githubLink: "https://github.com/Imad/school-management-system",
+            githubLink: "https://github.com/Codewithimaad/School-management-system",
             liveLink: "https://luminous-international-school.onrender.com",
         },
         {
             title: "Imad Portfolio",
             description: "A personal portfolio showcasing my projects, skills, and experience as a full-stack web developer.",
             image: portfolioImage,
-            githubLink: "https://github.com/Imad/portfolio",
-            liveLink: "https://codewithimaad.github.io/personalportfolio/",
+            githubLink: "https://github.com/Codewithimaad/perosnalportfolio",
+            liveLink: "https://codewithimaad.github.io/perosnalportfolio/",
         },
+        {
+            title: "Country Guide",
+            description: "An interactive app showcasing country details, including area, population, currency, and flag. Built with React for dynamic and responsive data presentation.",
+            image: countryImage,
+            githubLink: "https://github.com/Codewithimaad/Country-Details",
+            liveLink: "https://codewithimaad.github.io/Country-Details/",
+        }
+
     ];
 
     return (

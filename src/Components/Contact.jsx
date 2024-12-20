@@ -92,7 +92,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         initial={{ opacity: 0, x: 100 }}
                         transition={{ duration: 1.5 }}
-                        className="p-8 rounded-lg shadow-xl"
+                        className="sm:p-0 md:p-6 lg:p-8  rounded-lg shadow-xl"
                     >
                         <form ref={form} onSubmit={handleSubmit}>
                             <div className="mb-6">
@@ -149,7 +149,7 @@ const Contact = () => {
                             <div className="flex justify-center">
                                 <button
                                     type="submit"
-                                    className="w-full py-4  bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full py-3 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-green-500 hover:to-green-800 hover:shadow-green-500/50"
+                                    className="w-full py-2 md:py-4 lg:py-4  bg-gradient-to-r from-green-600 to-green-800 text-white rounded-full px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-green-500 hover:to-green-800 hover:shadow-green-500/50"
                                 >
                                     Send Message
                                 </button>

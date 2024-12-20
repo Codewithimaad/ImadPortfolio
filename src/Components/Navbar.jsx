@@ -19,7 +19,7 @@ const Navbar = () => {
                     <FaLinkedin />
                 </a>
                 <a
-                    href=""
+                    href="https://github.com/Codewithimaad"
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label='Github'
@@ -27,7 +27,7 @@ const Navbar = () => {
                     <FaGithub />
                 </a>
                 <a
-                    href=""
+                    href="https://www.instagram.com/imadhussainkhan/profilecard/?igsh=ZmV3Y2lzOTZsbnVl"
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label='Instagram'
@@ -35,7 +35,7 @@ const Navbar = () => {
                     <FaInstagram />
                 </a>
                 <a
-                    href=""
+                    href="https://www.facebook.com/profile.php?id=100005439558295&mibextid=ZbWKwL"
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label='Facebook'

@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutImg from '../assets/Images/About.jpg'
 
 const About = () => {
     return (
         <section
             id="about"
-            className="relative py-20 text-white rounded-lg"
+            className="relative py-20 px-0 text-white rounded-lg"
         >
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-900 opacity-20"></div>
@@ -21,7 +22,7 @@ const About = () => {
             </motion.h2>
 
             {/* Content Container */}
-            <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12 relative z-10">
+            <div className="container flex flex-col lg:flex-row items-center gap-12 relative z-10">
                 {/* Image Section */}
                 <motion.div
                     className="lg:w-1/2 w-full flex justify-center"
@@ -31,9 +32,9 @@ const About = () => {
                 >
                     <div className="relative">
                         <motion.img
-                            src="https://via.placeholder.com/400"
+                            src={aboutImg}
                             alt="Imad Hussain"
-                            className="rounded-full w-60 h-60 lg:w-80 lg:h-80 object-cover shadow-lg transform hover:scale-105 transition-transform duration-500"
+                            className="rounded-full w-60 h-60 lg:w-80 lg:h-80 object-cover shadow-lg  hover:border-2 hover:border-green-600 transform hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-purple-500 rounded-full blur-xl"></div>
                     </div>
@@ -41,7 +42,7 @@ const About = () => {
 
                 {/* Text Section */}
                 <motion.div
-                    className="lg:w-1/2 w-full p-4"
+                    className="lg:w-1/2 w-full p-2 md:p-4 lg:p-4"
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: 50 }}
                     transition={{ duration: 1 }}
@@ -93,10 +94,10 @@ const About = () => {
                         transition={{ duration: 1, delay: 1.1 }}
                     >
                         <a
-                            href="https://drive.google.com/file/d/your-resume-link"
+                            href="https://drive.google.com/file/d/1vrrrJ_GgpGdJCmRd-yLHY9p7U5LrrfDF/view?usp=drive_link"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full py-3 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-purple-700 hover:to-purple-900 hover:shadow-purple-500/50"
+                            className="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full py-2 md:py-3 lg:py-3 sm:px-8 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-purple-700 hover:to-purple-900 hover:shadow-purple-500/50"
                         >
                             Download Resume
                         </a>
