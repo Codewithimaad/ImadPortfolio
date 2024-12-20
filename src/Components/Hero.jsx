@@ -28,7 +28,7 @@ const Hero = () => {
                         <motion.img
                             src={profilePic}
                             alt="Imad Khan"
-                            className="border border-stone-900 rounded-full"
+                            className="border border-stone-900 rounded-md"
                             width={650}
                             height={650}
                             initial={{ x: 100, opacity: 0 }}
@@ -39,7 +39,7 @@ const Hero = () => {
                 </div>
 
                 {/* Text Section */}
-                <div className="w-full lg:w-1/2">
+                <div className="w-full lg:w-1/2 ">
                     <motion.div
                         initial='hidden'
                         animate='visible'
@@ -60,7 +60,7 @@ const Hero = () => {
 
                         <motion.p
                             variants={childVariants}
-                            className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter">
+                            className="my-2 max-w-lg py-6 sm:text-base lg:text-xl leading-relaxed tracking-tighter">
                             I am a passionate full-stack web developer with 1 year of experience, skilled in Node.js, MongoDB, React, and EJS. I specialize in building scalable, high-performance web applications and enjoy solving complex problems with modern technologies. My focus is on creating impactful solutions through clean, efficient code and continuous learning to stay updated with industry trends.
                         </motion.p>
 

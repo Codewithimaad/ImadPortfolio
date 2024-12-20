@@ -49,12 +49,12 @@ const About = () => {
                 >
                     {/* Introduction */}
                     <motion.p
-                        className="text-xl text-gray-300 mb-6 leading-relaxed"
+                        className="text-base md:text-xl lg:text-xl text-gray-300 mb-6 leading-relaxed"
                         whileInView={{ opacity: 1, y: 0 }}
                         initial={{ opacity: 0, y: 50 }}
                         transition={{ duration: 1, delay: 0.5 }}
                     >
-                        Hello! I’m <span className="text-green-400 font-semibold">Imad Hussain</span>, a
+                        Hello! I’m <span className="text-green-400 font-semibold">Imad Hussain Khan</span>, a
                         full-stack web developer with over 1 year of experience. I’m passionate about
                         crafting responsive, user-friendly, and scalable web applications that bring ideas to
                         life.
@@ -62,7 +62,7 @@ const About = () => {
 
                     {/* Skills */}
                     <motion.p
-                        className="text-xl text-gray-300 mb-6 leading-relaxed"
+                        className="text-base md:text-xl lg:text-xl text-gray-300 mb-6 leading-relaxed"
                         whileInView={{ opacity: 1, y: 0 }}
                         initial={{ opacity: 0, y: 50 }}
                         transition={{ duration: 1, delay: 0.7 }}
@@ -76,7 +76,7 @@ const About = () => {
 
                     {/* Hobbies */}
                     <motion.p
-                        className="text-xl text-gray-300 mb-8 leading-relaxed"
+                        className="text-base md:text-xl lg:text-xl text-gray-300 mb-8 leading-relaxed"
                         whileInView={{ opacity: 1, y: 0 }}
                         initial={{ opacity: 0, y: 50 }}
                         transition={{ duration: 1, delay: 0.9 }}
@@ -94,7 +94,7 @@ const About = () => {
                         transition={{ duration: 1, delay: 1.1 }}
                     >
                         <a
-                            href="https://drive.google.com/file/d/1vrrrJ_GgpGdJCmRd-yLHY9p7U5LrrfDF/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1vrrrJ_GgpGdJCmRd-yLHY9p7U5LrrfDF/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full py-2 md:py-3 lg:py-3 sm:px-8 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-purple-700 hover:to-purple-900 hover:shadow-purple-500/50"

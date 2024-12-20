@@ -5,8 +5,8 @@ const Navbar = () => {
     return (
         <nav className='flex items-center justify-between py-6'>
             <div className='flex flex-shrink-0 items-center'>
-                <a href="/" aria-label='Home' className='text-3xl lg:text-5xl'>
-                    I <span className='text-3xl lg:text-5xl text-green-500' width={50} height={33} >MAD.</span>
+                <a href="/" aria-label='Home' className='text-2xl md:text-3xl lg:text-5xl'>
+                    I <span className='text-2xl md:text-3xl lg:text-5xl text-green-500' width={50} height={33} >MAD.</span>
                 </a>
             </div>
             <div className='m-8 flex items-center justify-center gap-4 text-2xl'>
