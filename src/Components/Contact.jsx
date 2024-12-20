@@ -41,6 +41,11 @@ const Contact = () => {
                         email: "",
                         message: "",
                     });
+
+                    // Hide the success message after 5 seconds
+                    setTimeout(() => {
+                        setStatus("");
+                    }, 5000);
                 },
                 (error) => {
                     setStatus("Error sending message. Please try again later.");
