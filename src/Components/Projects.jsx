@@ -5,6 +5,8 @@ import currencyImage from "../assets/Images/Currency.jpg";
 import schoolImage from "../assets/Images/School.png";
 import portfolioImage from "../assets/Images/PortfolioPink.jpg";
 import countryImage from '../assets/Images/Country.png'
+import foodPriceImage from '../assets/Images/foodPrice.png'
+import EcommerceImage from '../assets/Images/EcommerceImage.png'
 
 const Projects = () => {
     const projectData = [
@@ -26,7 +28,7 @@ const Projects = () => {
             title: "School Management System",
             description: "A full-stack school management system with features like student enrollment, Attendance, Fee Entry, and Role-Based Authorization etc.",
             image: schoolImage,
-            githubLink: "https://github.com/Codewithimaad/School-management-system",
+            githubLink: "#",
             liveLink: "https://luminous-international-school.onrender.com",
         },
         {
@@ -42,7 +44,22 @@ const Projects = () => {
             image: countryImage,
             githubLink: "https://github.com/Codewithimaad/Country-Details",
             liveLink: "https://codewithimaad.github.io/Country-Details/",
+        },
+        {
+            "title": "Food Price App",
+            "description": "A daily food pricing application that calculates and tracks food prices across KPK for the KP Government. Built using Node.js, MySQL, and EJS for the frontend.",
+            "image": foodPriceImage,
+            "githubLink": "#",
+            "liveLink": "https://foodpriceapp.onrender.com/"
+        },
+        {
+            "title": "E-Commerce Shop Website",
+            "description": "A fully functional e-commerce website for online shopping, featuring product listings, user authentication, and a seamless shopping experience. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js).",
+            "image": EcommerceImage,
+            "githubLink": "#",
+            "liveLink": "https://ahmedshop.vercel.app/"
         }
+
 
     ];
 
@@ -69,7 +86,7 @@ const Projects = () => {
                         >
                             <motion.div
                                 className="relative bg-purple-800 rounded-xl shadow-lg p-6 transform backdrop-blur-lg bg-opacity-30 lg:w-80"
-                                style={{ height: "420px" }} // Fixed height for all cards
+                                style={{ height: "470px" }} // Fixed height for all cards
                                 whileInView={{ opacity: 1, y: 0 }}
                                 initial={{ opacity: 0, y: -100 }}
                                 transition={{ duration: 1 }}
