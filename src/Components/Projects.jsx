@@ -28,7 +28,7 @@ const Projects = () => {
             title: "School Management System",
             description: "A full-stack school management system with features like student enrollment, Attendance, Fee Entry, and Role-Based Authorization etc.",
             image: schoolImage,
-            githubLink: "",
+            githubLink: "#",
             liveLink: "https://luminous-international-school.onrender.com",
         },
         {
