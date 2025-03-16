@@ -5,7 +5,7 @@ import currencyImage from "../assets/Images/Currency.jpg";
 import schoolImage from "../assets/Images/School.png";
 import portfolioImage from "../assets/Images/PortfolioPink.jpg";
 import countryImage from '../assets/Images/Country.png'
-import foodPriceImage from '../assets/Images/foodPrice.png'
+import foodPriceImage from '../assets/Images/FoodPrice.png'
 import EcommerceImage from '../assets/Images/EcommerceImage.png'
 
 const Projects = () => {
