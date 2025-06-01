@@ -7,6 +7,7 @@ import portfolioImage from "../assets/Images/PortfolioPink.jpg";
 import countryImage from '../assets/Images/Country.png'
 import foodPriceImage from '../assets/Images/FoodPrice.png'
 import EcommerceImage from '../assets/Images/EcommerceImage.png'
+import HerbieImage from '../assets/Images/Herbie.jpg'
 
 const Projects = () => {
     const projectData = [
@@ -58,6 +59,13 @@ const Projects = () => {
             "image": EcommerceImage,
             "githubLink": "#",
             "liveLink": "https://ahmedshop.vercel.app/"
+        },
+        {
+            "title": "E-Commerce Herbie Website",
+            "description": "A fully functional e-commerce website for online shopping, featuring product listings, user authentication, and a seamless shopping experience. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js).",
+            "image": HerbieImage,
+            "githubLink": "https://github.com/Codewithimaad/Herbie",
+            "liveLink": "https://herbie-rust.vercel.app/"
         }
 
 
