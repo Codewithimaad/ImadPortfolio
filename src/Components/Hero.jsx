@@ -61,7 +61,7 @@ const Hero = () => {
                         <motion.p
                             variants={childVariants}
                             className="my-2 max-w-lg py-6 sm:text-base lg:text-xl leading-relaxed tracking-tighter">
-                            I am a passionate full-stack web developer with 1 year of experience, skilled in Node.js, MongoDB, React, and EJS. I specialize in building scalable, high-performance web applications and enjoy solving complex problems with modern technologies. My focus is on creating impactful solutions through clean, efficient code and continuous learning to stay updated with industry trends.
+                            As a passionate Full Stack Web Developer with 3.5 years of experience, I specialize in crafting responsive and scalable web applications using the MERN stack, Next.js, and Tailwind CSS. In addition to development, I possess hands-on knowledge in IT support, including hardware/software troubleshooting, basic networking, and user assistance. I thrive in fast-paced, collaborative environments delivering user-focused solutions in both development and technical support domains.
                         </motion.p>
 
                         <motion.a

@@ -1,75 +1,206 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Education = () => {
-    const educationData = [
-        {
-            degree: "Matric",
-            institution: "Air Foundation School System",
-            year: "2015 - 2017",
-            description:
-                "Focused on foundational pre-engineering subjects, including physics, and computer science. Gained essential problem-solving skills and a deep understanding of theoretical concepts crucial for technical fields.",
-        },
-        {
-            degree: "FSC",
-            institution: "Air Foundation School System & College System",
-            year: "2017 - 2019",
-            description:
-                "Enhanced knowledge in physics, and computer science. Developed analytical thinking and technical problem-solving skills, preparing for a career in technology-based disciplines.",
-        },
-        {
-            degree: "Bachelor of Science in Computer Science",
-            institution: "Abdul Wali Khan University",
-            year: "2019 - 2023",
-            description:
-                "Studied web development, software engineering, and database systems. Created projects like a full-stack School Management System, Currency Converter, and E-Votting App, showcasing expertise in modern web technologies.",
-        },
-        {
-            degree: "Diploma in Category B Pharmacy",
-            institution: "Alfarabi Health Education System Timergara",
-            year: "2022 - 2024",
-            description:
-                "Gained expertise in pharmaceutical sciences, drug dispensing, and patient care. One year of practical experience in medical settings, ensuring proper medication management and enhancing patient health outcomes.",
+const Stats = () => {
+    // Animation variants
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
         }
+    };
 
-    ];
+    const item = {
+        hidden: { opacity: 0, y: 30 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.16, 1, 0.3, 1]
+            }
+        }
+    };
 
+    const slideInFromLeft = {
+        hidden: { opacity: 0, x: -50 },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1]
+            }
+        }
+    };
+
+    const slideInFromRight = {
+        hidden: { opacity: 0, x: 50 },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1]
+            }
+        }
+    };
+
+    const hoverEffect = {
+        y: -5,
+        transition: { duration: 0.3, ease: "easeOut" }
+    };
 
     return (
-        <section id="education" className="py-20 text-white">
-            <div className="container mx-auto px-6">
-                <motion.h2
-                    whileInView={{ opacity: 1, y: 0 }}
-                    initial={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 1 }}
-                    className="text-4xl font-bold text-purple-300 text-center mb-10"
-                >
-                    Education
-                </motion.h2>
+        <section
+            id="stats"
+            className="relative py-24 px-6 sm:px-8 lg:px-12 overflow-hidden"
+        >
+            {/* Animated background elements */}
+            <div className="absolute inset-0 z-0">
+                <motion.div
+                    className="absolute top-0 left-1/4 w-32 h-32 rounded-full bg-purple-600 filter blur-3xl"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.1, scale: 1 }}
+                    transition={{ duration: 1.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                />
+                <motion.div
+                    className="absolute bottom-0 right-1/4 w-48 h-48 rounded-full bg-indigo-600 filter blur-3xl"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.1, scale: 1 }}
+                    transition={{ duration: 1.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                />
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {educationData.map((edu, index) => (
-                        <motion.div
-                            key={index}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            initial={{ opacity: 0, y: 50 }}
-                            transition={{ duration: 1, delay: index * 0.3 }}
-                            className="bg-gradient-to-r from-purple-800 to-purple-900 p-6 rounded-lg shadow-lg"
+            {/* Content container */}
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* Section header */}
+                <motion.div
+                    className="text-center mb-16"
+                    initial="hidden"
+                    whileInView="show"
+                    variants={item}
+                    viewport={{ once: true }}
+                >
+                    <motion.h2
+                        className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-200 mb-4"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                        Development Metrics
+                    </motion.h2>
+                    <motion.p
+                        className="text-lg text-purple-100/80 max-w-2xl mx-auto"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        My GitHub activity, contributions, and technology stack
+                    </motion.p>
+                </motion.div>
+
+                {/* Stats grid */}
+                <motion.div
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"
+                    initial="hidden"
+                    whileInView="show"
+                    variants={container}
+                    viewport={{ once: true }}
+                >
+                    {/* GitHub Stats */}
+                    <motion.div
+                        className="bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+                        variants={slideInFromLeft}
+                        whileHover={hoverEffect}
+                    >
+                        <motion.h3
+                            className="text-xl font-semibold text-purple-100 mb-4"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
                         >
-                            <h3 className="text-2xl font-semibold text-green-400 mb-2">
-                                {edu.degree}
-                            </h3>
-                            <p className="text-lg text-purple-300">
-                                {edu.institution}
-                            </p>
-                            <p className="text-gray-400 text-sm mb-4">{edu.year}</p>
-                            <p className="text-gray-300">{edu.description}</p>
-                        </motion.div>
-                    ))}
-                </div>
+                            Activity Overview
+                        </motion.h3>
+                        <div className="overflow-hidden rounded-lg">
+                            <motion.img
+                                src="https://github-readme-stats.vercel.app/api?username=Codewithimaad&show_icons=true&theme=radical"
+                                alt="GitHub Stats"
+                                className="w-full h-auto"
+                                loading="lazy"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.02 }}
+                            />
+                        </div>
+                    </motion.div>
+
+                    {/* Top Languages */}
+                    <motion.div
+                        className="bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+                        variants={slideInFromRight}
+                        whileHover={hoverEffect}
+                    >
+                        <motion.h3
+                            className="text-xl font-semibold text-purple-100 mb-4"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            Technology Stack
+                        </motion.h3>
+                        <div className="overflow-hidden rounded-lg">
+                            <motion.img
+                                src="https://github-readme-stats.vercel.app/api/top-langs/?username=Codewithimaad&layout=compact&theme=radical"
+                                alt="Top Languages"
+                                className="w-full h-auto"
+                                loading="lazy"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                whileHover={{ scale: 1.02 }}
+                            />
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                {/* Streak stats */}
+                <motion.div
+                    className="bg-gray-800/50 backdrop-blur-lg border border-gray-700/50 rounded-xl p-6 shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+                    variants={item}
+                    whileHover={hoverEffect}
+                >
+                    <motion.h3
+                        className="text-xl font-semibold text-purple-100 mb-4"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        Contribution Streak
+                    </motion.h3>
+                    <div className="overflow-hidden rounded-lg">
+                        <motion.img
+                            src="https://github-readme-streak-stats.herokuapp.com/?user=Codewithimaad&theme=radical"
+                            alt="GitHub Streak"
+                            className="w-full h-auto"
+                            loading="lazy"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            whileHover={{ scale: 1.02 }}
+                        />
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
 };
 
-export default Education;
+export default Stats;

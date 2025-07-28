@@ -15,6 +15,7 @@
     "emailjs-com": "^3.2.0",
     "express": "^4.21.2",
     "framer-motion": "^11.15.0",
+    "lucide-react": "^0.528.0",
     "nodemailer": "^6.9.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

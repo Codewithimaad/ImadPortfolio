@@ -8,6 +8,9 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Education from './Components/Education'
 import Footer from './Components/Footer'
+import Stats from './Components/Stats'
+import Experience from './Components/Experience'
+import Certifications from './Components/Certifications'
 
 const App = () => {
   return (
@@ -20,9 +23,12 @@ const App = () => {
         <Hero />
         <About />
         <Technologies />
+        <Experience />
         <Education />
+        <Certifications />
         <Projects />
         <MyServices />
+        <Stats />
         <Contact />
         <Footer />
       </div>
