@@ -9,7 +9,6 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Education from './Components/Education'
 import Footer from './Components/Footer'
-import Stats from './Components/Stats'
 import Experience from './Components/Experience'
 import Certifications from './Components/Certifications'
 import TestimonialsSection from './Components/Testimonials'
@@ -37,10 +36,11 @@ const App = () => {
         <section id="certifications"><Certifications /></section>
         <section id="projects"><Projects /></section>
         <section id="services"><MyServices /></section>
-        <section id="stats"><Stats /></section>
         <section id="contact"><Contact /></section>
 
       </div>
+
+      <Footer />
 
       {/* ✅ Scroll To Top Button */}
       <ScrollToTopButton />

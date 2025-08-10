@@ -8,26 +8,13 @@ const ModernTestimonials = () => {
     // Sample testimonials data
     const testimonials = [
         {
-            author: "Sarah Chen",
-            role: "VP of Product, TechFlow",
-            company: "TechFlow Inc.",
-            quote: "The platform transformed how we approach customer engagement. Our conversion rates increased by 240% within the first quarter of implementation.",
+            author: "Haroon Alam",
+            role: "Digital Entrepreneur",
+            company: "Rebel Media.",
+            quote: "I hired Imad to build my landing page and backend for a digital course, and he nailed it. Clean design, smooth database setup, and flawless integrations, Google Analytics, Google Ads, Facebook Ads, email automation, and WhatsApp API. Everything works perfectly, and the process was fast, professional, and stress-free. Highly recommend Imad for a custom built website.",
             image: "https://images.unsplash.com/photo-1494790108755-2616b332c937?w=400&h=400&fit=crop&crop=face"
         },
-        {
-            author: "Marcus Rodriguez",
-            role: "CEO & Founder",
-            company: "InnovateLab",
-            quote: "Outstanding results and exceptional support. This solution streamlined our entire workflow and saved us countless hours every week.",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-        },
-        {
-            author: "Emily Watson",
-            role: "Head of Operations",
-            company: "GlobalTech Solutions",
-            quote: "Game-changing technology with intuitive design. Our team adopted it seamlessly and we saw immediate improvements in productivity.",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
-        }
+
     ];
 
     const handleNext = () => {

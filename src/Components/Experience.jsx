@@ -32,7 +32,7 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+        <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-8xl mx-auto overflow-hidden">
             {/* Background elements */}
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full bg-purple-500/20 blur-3xl animate-float"></div>

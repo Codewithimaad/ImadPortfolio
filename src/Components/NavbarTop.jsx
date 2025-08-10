@@ -14,7 +14,6 @@ const NavbarTop = () => {
         { name: "CLIENTS", id: "testimonials" },
         { name: "PROJECTS", id: "projects" },
         { name: "TECHNOLOGIES", id: "technologies" },
-        { name: "GITHUB STATS", id: "stats" },
         { name: "ABOUT", id: "about" },
         { name: "CONTACT", id: "contact" },
     ];
