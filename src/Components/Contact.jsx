@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
-import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaReact, FaWhatsapp } from "react-icons/fa";
 
 
 const Contact = () => {
@@ -104,7 +104,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-semibold text-purple-300">Phone</h4>
-                                    <a href="tel:+923149958670" className="text-gray-300 hover:text-green-400 transition-colors">+92 3149958670</a>
+                                    <a href="tel:+923149958670" className="text-gray-300 hover:text-green-400 transition-colors">+966 536317098</a>
                                 </div>
                             </div>
 
@@ -117,7 +117,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-semibold text-purple-300">Location</h4>
-                                    <p className="text-gray-300">Shahzadi Payeen, Dir Lower, KPK</p>
+                                    <p className="text-gray-300">Al-Mugharazat, Riyadh, Saudi Arabia</p>
                                 </div>
                             </div>
                         </div>
@@ -128,12 +128,12 @@ const Contact = () => {
                             <div className="flex space-x-4">
                                 {/* React Portfolio/Project Link */}
                                 <a
-                                    href="https://react.dev/"
+                                    href="https://www.instagram.com/imadhussainkhan/profilecard"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-gray-800 rounded-full hover:bg-purple-900/50 transition-colors"
+                                    className="p-2 bg-pink-700 rounded-full hover:bg-purple-900/50 transition-colors"
                                 >
-                                    <FaReact className="w-5 h-5 text-gray-300" />
+                                    <FaInstagram className="w-5 h-5 text-gray-300" />
                                 </a>
 
                                 {/* GitHub */}
@@ -141,19 +141,28 @@ const Contact = () => {
                                     href="https://github.com/Codewithimaad"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-gray-800 rounded-full hover:bg-purple-900/50 transition-colors"
+                                    className="p-2 bg-gray-950 rounded-full hover:bg-purple-900/50 transition-colors"
                                 >
                                     <FaGithub className="w-5 h-5 text-gray-300" />
                                 </a>
 
                                 {/* LinkedIn */}
                                 <a
-                                    href="https://www.linkedin.com/in/imad-hussain-khan"
+                                    href="https://www.linkedin.com/in/imad-hussain-khan-76388b305"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-2 bg-gray-800 rounded-full hover:bg-purple-900/50 transition-colors"
+                                    className="p-2 bg-blue-800 rounded-full hover:bg-purple-900/50 transition-colors"
                                 >
                                     <FaLinkedin className="w-5 h-5 text-gray-300" />
+                                </a>
+                                {/* Whatsapp */}
+                                <a
+                                    href="https://wa.me/966536317098"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-2 bg-green-800 rounded-full hover:bg-purple-900/50 transition-colors"
+                                >
+                                    <FaWhatsapp className="w-5 h-5 text-gray-300" />
                                 </a>
                             </div>
                         </div>
@@ -180,7 +189,7 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                                    placeholder="John Doe"
+                                    placeholder="Name"
                                     required
                                 />
                             </div>
@@ -196,7 +205,7 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                                    placeholder="john@example.com"
+                                    placeholder="Email"
                                     required
                                 />
                             </div>

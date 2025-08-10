@@ -4,29 +4,54 @@ import { motion } from 'framer-motion';
 const MyServices = () => {
     const servicesData = [
         {
-            title: "Web Development",
-            description: "Developing modern, responsive, and scalable web applications tailored to your unique needs.",
-            icon: "🌐",
+            title: "Custom Web Applications",
+            description: "Designing and developing fully tailored, high-performance web applications to meet specific business goals.",
+            icon: "⚡",
+            color: "from-indigo-500/10 to-indigo-600/20"
+        },
+        {
+            title: "Frontend Development",
+            description: "Creating responsive, pixel-perfect interfaces using modern frameworks like React, Next.js, and Vue.js.",
+            icon: "🎨",
             color: "from-purple-500/10 to-purple-600/20"
         },
         {
-            title: "UI/UX Design",
-            description: "Designing intuitive and visually appealing interfaces that enhance user satisfaction and engagement.",
-            icon: "🎨",
+            title: "Backend Development",
+            description: "Building scalable, secure, and efficient backend systems with Node.js, Express, and robust databases.",
+            icon: "🛠️",
             color: "from-emerald-500/10 to-emerald-600/20"
         },
         {
-            title: "Full-Stack Development",
-            description: "Providing comprehensive solutions, from frontend development to backend systems, ensuring seamless integration.",
+            title: "Full-Stack Solutions",
+            description: "Delivering seamless end-to-end development, integrating frontend, backend, and databases into a unified system.",
             icon: "💻",
             color: "from-blue-500/10 to-blue-600/20"
         },
         {
-            title: "API Integration",
-            description: "Implementing and integrating third-party APIs to expand functionality and streamline operations.",
+            title: "API Development & Integration",
+            description: "Designing RESTful and GraphQL APIs, integrating third-party services, and ensuring smooth system communication.",
             icon: "🔗",
             color: "from-amber-500/10 to-amber-600/20"
         },
+        {
+            title: "E-Commerce Development",
+            description: "Building secure, scalable, and conversion-optimized online stores with payment gateway integrations.",
+            icon: "🛒",
+            color: "from-pink-500/10 to-pink-600/20"
+        },
+        {
+            title: "Cloud Deployment & DevOps",
+            description: "Deploying applications on AWS, Vercel, or DigitalOcean with CI/CD pipelines for faster, reliable updates.",
+            icon: "☁️",
+            color: "from-cyan-500/10 to-cyan-600/20"
+        },
+        {
+            title: "Maintenance & Optimization",
+            description: "Providing ongoing support, performance optimization, and security updates to keep your app running flawlessly.",
+            icon: "🛡️",
+            color: "from-red-500/10 to-red-600/20"
+        }
+
     ];
 
     // Animation variants

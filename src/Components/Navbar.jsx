@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
@@ -26,6 +26,9 @@ const Navbar = () => {
             </div>
 
             <div className='m-8 flex items-center justify-center gap-12 lg:gap-4 text-2xl'>
+                <a href="https://wa.me/966536317098" target='_blank' rel='noopener noreferrer' aria-label='Whatsapp' className='transition-all duration-300 ease-in-out hover:scale-110 hover:text-green-600'>
+                    <FaWhatsapp />
+                </a>
                 <a href="https://www.linkedin.com/in/imad-hussain-khan-76388b305" target='_blank' rel='noopener noreferrer' aria-label='Linkedin' className='transition-all duration-300 ease-in-out hover:scale-110 hover:text-blue-600'>
                     <FaLinkedin />
                 </a>
@@ -38,6 +41,7 @@ const Navbar = () => {
                 <a href="https://www.facebook.com/profile.php?id=100005439558295" target='_blank' rel='noopener noreferrer' aria-label='Facebook' className='transition-all duration-300 ease-in-out hover:scale-110 hover:text-blue-600'>
                     <FaFacebook />
                 </a>
+
 
 
             </div>
