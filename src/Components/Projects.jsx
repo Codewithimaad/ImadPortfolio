@@ -4,60 +4,29 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { ChevronRight } from "lucide-react";
 import weatherImage from "../assets/Images/Weather.jpg";
 import currencyImage from "../assets/Images/Currency.jpg";
-import schoolImage from "../assets/Images/School.png";
+import schoolImage from "../assets/School.png";
 import portfolioImage from "../assets/Images/PortfolioPink.jpg";
 import countryImage from '../assets/Images/Country.png';
-import foodPriceImage from '../assets/Images/FoodPrice.png';
+import foodPriceImage from '../assets/FoodPrice.png';
 import EcommerceImage from '../assets/Images/EcommerceImage.png';
-import HerbieImage from '../assets/Images/Herbie.jpg';
+import HerbieImage from '../assets/Herbie.png';
+import CompanyProfile from '../assets/Company.png';
 
 const Projects = () => {
     const projectData = [
         {
-            title: "Weather App",
-            description: "A weather app built with React that provides real-time weather information.",
-            image: weatherImage,
-            githubLink: "https://github.com/Codewithimaad/weather-check",
-            liveLink: "https://codewithimaad.github.io/weather-check/",
-            tags: ["React", "API"]
-        },
-        {
-            title: "Currency Converter",
-            description: "A currency converter app using React and an external API to fetch live exchange rates.",
-            image: currencyImage,
-            githubLink: "https://github.com/Codewithimaad/Currency-Converter",
-            liveLink: "https://codewithimaad.github.io/Currency-Converter/",
-            tags: ["React", "API"]
-        },
-        {
             title: "School Management System",
             description: "Full-stack school management system with student enrollment, attendance tracking, and role-based authorization.",
             image: schoolImage,
-            githubLink: "#",
+            githubLink: "https://github.com/Codewithimaad/School-management-system",
             liveLink: "https://luminous-international-school.onrender.com",
             tags: ["MERN", "Fullstack"]
-        },
-        {
-            title: "Imad Portfolio",
-            description: "Personal portfolio showcasing projects, skills, and experience as a full-stack developer.",
-            image: portfolioImage,
-            githubLink: "https://github.com/Codewithimaad/perosnalportfolio",
-            liveLink: "https://codewithimaad.github.io/perosnalportfolio/",
-            tags: ["React", "Portfolio"]
-        },
-        {
-            title: "Country Guide",
-            description: "Interactive app showcasing country details including area, population, currency, and flag.",
-            image: countryImage,
-            githubLink: "https://github.com/Codewithimaad/Country-Details",
-            liveLink: "https://codewithimaad.github.io/Country-Details/",
-            tags: ["React", "API"]
         },
         {
             title: "Food Price App",
             description: "Daily food pricing application that calculates and tracks food prices across KPK for the KP Government.",
             image: foodPriceImage,
-            githubLink: "#",
+            githubLink: "https://github.com/Codewithimaad/FoodPriceApp",
             liveLink: "https://foodpriceapp.onrender.com/",
             tags: ["Node.js", "MySQL"]
         },
@@ -65,7 +34,7 @@ const Projects = () => {
             title: "E-Commerce Shop",
             description: "Fully functional e-commerce website with product listings, user auth, and shopping experience.",
             image: EcommerceImage,
-            githubLink: "#",
+            githubLink: "https://github.com/Codewithimaad/AHMED-SHOP",
             liveLink: "https://ahmedshop.vercel.app/",
             tags: ["MERN", "E-commerce"]
         },
@@ -76,6 +45,14 @@ const Projects = () => {
             githubLink: "https://github.com/Codewithimaad/Herbie",
             liveLink: "https://herbie-rust.vercel.app/",
             tags: ["MERN", "E-commerce"]
+        },
+        {
+            title: "Eccentric Technologies",
+            description: "Official corporate website showcasing Eccentric Technologies' services, expertise, and portfolio, with a modern design and responsive user experience.",
+            image: CompanyProfile,
+            githubLink: "https://github.com/Codewithimaad/Eccentric-Technologies",
+            liveLink: "https://eccentric-technologies.vercel.app/",
+            tags: ["MERN", "Corporate Website", "Company Project"]
         }
     ];
 
@@ -148,6 +125,43 @@ const Projects = () => {
         scale: 0.98
     };
 
+    // New animation for the image reveal
+    const imageReveal = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1]
+            }
+        }
+    };
+
+    // Special animation for Project 4 (Eccentric Technologies)
+    const eccentricImageAnimation = {
+        hidden: {
+            opacity: 0,
+            clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)'
+        },
+        visible: {
+            opacity: 1,
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            transition: {
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.3
+            }
+        },
+        hover: {
+            scale: 1.05,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    };
+
     return (
         <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
             {/* Background elements */}
@@ -208,39 +222,81 @@ const Projects = () => {
                         whileTap={tapEffect}
                     >
                         <div className="h-full flex flex-col bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 overflow-hidden hover:border-emerald-400/30 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/10">
-                            {/* Project image */}
-                            <motion.div
-                                className="relative h-48 overflow-hidden"
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover"
-                                    loading="lazy"
-                                />
+                            {/* Project image - Special animation for Project 4 */}
+                            {index === 4 ? (
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 flex items-end p-4"
-                                    initial={{ opacity: 0 }}
-                                    whileHover={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
+                                    className="relative h-48 overflow-hidden"
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    variants={eccentricImageAnimation}
+                                    whileHover="hover"
+                                    viewport={{ once: true }}
                                 >
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tags.map((tag, i) => (
-                                            <motion.span
-                                                key={i}
-                                                className="text-xs px-2 py-1 bg-emerald-500/20 text-emerald-300 rounded-full"
-                                                initial={{ scale: 0 }}
-                                                whileInView={{ scale: 1 }}
-                                                transition={{ delay: i * 0.1 }}
-                                            >
-                                                {tag}
-                                            </motion.span>
-                                        ))}
-                                    </div>
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 flex items-end p-4"
+                                        initial={{ opacity: 0 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.tags.map((tag, i) => (
+                                                <motion.span
+                                                    key={i}
+                                                    className="text-xs px-2 py-1 bg-emerald-500/20 text-emerald-300 rounded-full"
+                                                    initial={{ scale: 0 }}
+                                                    whileInView={{ scale: 1 }}
+                                                    transition={{ delay: i * 0.1 }}
+                                                >
+                                                    {tag}
+                                                </motion.span>
+                                            ))}
+                                        </div>
+                                    </motion.div>
                                 </motion.div>
-                            </motion.div>
+                            ) : (
+                                <motion.div
+                                    className="relative h-48 overflow-hidden"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.3 }}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    variants={imageReveal}
+                                    viewport={{ once: true }}
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 flex items-end p-4"
+                                        initial={{ opacity: 0 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.tags.map((tag, i) => (
+                                                <motion.span
+                                                    key={i}
+                                                    className="text-xs px-2 py-1 bg-emerald-500/20 text-emerald-300 rounded-full"
+                                                    initial={{ scale: 0 }}
+                                                    whileInView={{ scale: 1 }}
+                                                    transition={{ delay: i * 0.1 }}
+                                                >
+                                                    {tag}
+                                                </motion.span>
+                                            ))}
+                                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            )}
 
                             {/* Project content */}
                             <div className="flex-1 p-6 flex flex-col">

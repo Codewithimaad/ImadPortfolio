@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, stagger } from "framer-motion";
-import profilePic from '../assets/Images/dp.jpg';
+import profilePic from '../assets/Images/ImadLogo.png';
 
 const containerVariants = {
     hidden: {
