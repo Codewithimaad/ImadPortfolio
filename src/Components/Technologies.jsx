@@ -1,9 +1,8 @@
 import React from 'react';
 import { RiReactjsLine } from 'react-icons/ri';
-import { SiMongodb } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiNextdotjs, SiTypescript, SiDotnet, SiMysql, SiPostgresql } from 'react-icons/si';
 import { TbBrandNodejs } from 'react-icons/tb';
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiExpress } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaBootstrap } from "react-icons/fa";
 import { motion } from 'framer-motion';
@@ -42,18 +41,23 @@ const Technologies = () => {
                     { icon: <IoLogoJavascript />, color: 'text-yellow-600' },
                     { icon: <SiExpress />, color: 'text-yellow-600' },
                     { icon: <RiTailwindCssFill />, color: 'text-cyan-500' },
-                    { icon: <FaBootstrap />, color: 'text-purple-500' }
+                    { icon: <FaBootstrap />, color: 'text-purple-500' },
+                    { icon: <SiNextdotjs />, color: 'text-gray-200' }, // Next.js
+                    { icon: <SiTypescript />, color: 'text-blue-500' }, // TypeScript
+                    { icon: <SiDotnet />, color: 'text-violet-500' }, // ASP.NET MVC
+                    { icon: <SiMysql />, color: 'text-orange-500' }, // MySQL
+                    { icon: <SiPostgresql />, color: 'text-sky-500' } // PostgreSQL
                 ].map((tech, index) => (
                     <motion.div
                         key={index}
                         className='p-4'
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger animation
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
                     >
                         <motion.div
                             className={`text-7xl ${tech.color} transition-transform duration-300 ease-in-out hover:scale-110`}
-                            variants={iconVariants(2)} // Use the iconVariants for animation
+                            variants={iconVariants(2)}
                             initial="initial"
                             animate="animate"
                         >

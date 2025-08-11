@@ -1,122 +1,221 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { FiExternalLink } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
 
-const certifications = [
-    {
-        title: "Full Stack Web Development Experience",
-        issuer: "Mazhar Enterprises Pvt Ltd",
-        date: "Mar 2025",
-        link: "https://drive.google.com/file/d/1UxUU4T7c3L4lwQq3KCTiIj1xDY0WDv6D/view?usp=drive_link",
-    },
-    {
-        title: "Full Stack Web Development Bootcamp",
-        issuer: "Udemy",
-        date: "Feb 2022",
-        link: "https://drive.google.com/file/d/1zgmwvxVtHANW_B3fz2PZIacnZnA0_C30/view?usp=drive_link",
-    },
-    {
-        title: "Full Stack Web Development Experience",
-        issuer: "E-Digital Pakistan",
-        date: "Jun 2025",
-        link: "https://drive.google.com/file/d/1a8w3vnoyCXfKKyzkZSkaeuA-jeYwfEej/view?usp=drive_link",
-    },
-    {
-        title: "Certificate of Appreciation",
-        issuer: "Abdul Wali Khan University",
-        date: "December 2022",
-        link: "https://drive.google.com/file/d/1GZNFq7O6LjxW38yxsKDPmW1XKffrTaJD/view?usp=drive_link",
-    },
-];
+// Unicode icons since react-icons isn't available
+const ExternalLinkIcon = () => <span className="text-sm">↗</span>;
 
-const Certifications = () => {
+const FloatingCertCard = ({ cert, index, mousePosition }) => {
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [rotation, setRotation] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        const floatAnimation = () => {
+            const time = Date.now() * 0.001;
+            const newX = Math.sin(time + index * 1.5) * 20;
+            const newY = Math.cos(time * 0.9 + index * 0.8) * 15;
+            const newRotation = Math.sin(time * 0.3 + index) * 2;
+
+            setPosition({ x: newX, y: newY });
+            setRotation(newRotation);
+        };
+
+        const interval = setInterval(floatAnimation, 60);
+        return () => clearInterval(interval);
+    }, [index]);
+
+    const calculateParallax = () => {
+        if (!mousePosition) return { x: 0, y: 0 };
+        const parallaxStrength = 0.012;
+        return {
+            x: (mousePosition.x - window.innerWidth / 2) * parallaxStrength,
+            y: (mousePosition.y - window.innerHeight / 2) * parallaxStrength
+        };
+    };
+
+    const parallax = calculateParallax();
+
     return (
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-            {/* Background elements */}
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-                <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full blur-3xl animate-float"></div>
-                <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full blur-3xl animate-float-delay"></div>
-            </div>
+        <div
+            className="relative group cursor-pointer h-full"
+            style={{
+                transform: `translate(${position.x + parallax.x}px, ${position.y + parallax.y}px) rotate(${rotation}deg)`,
+                transition: 'transform 0.1s ease-out'
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {/* Glowing aura */}
+            <div className={`absolute inset-0 bg-gradient-to-r ${cert.gradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-all duration-700 scale-110`} />
 
-            {/* Section header */}
-            <div className="text-center mb-16">
-                <motion.h2
-                    className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-emerald-400 mb-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    viewport={{ once: true }}
-                >
-                    Professional Certifications
-                </motion.h2>
-                <motion.p
-                    className="text-lg text-gray-400 max-w-2xl mx-auto"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    Verified credentials demonstrating my expertise and learning journey
-                </motion.p>
-            </div>
+            {/* Main card */}
+            <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block h-full bg-gray-900/70 backdrop-blur-2xl border border-gray-700/40 rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-purple-500/30 group-hover:border-purple-400/60 transition-all duration-500 hover:scale-105"
+            >
+                {/* Animated border effect */}
+                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-pulse" />
+                </div>
 
-            {/* Certifications grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {certifications.map(({ title, issuer, date, link }, idx) => (
-                    <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.6,
-                            delay: idx * 0.1,
-                            ease: [0.16, 1, 0.3, 1]
-                        }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="h-full"
-                    >
-                        <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative h-full flex flex-col p-6 bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 hover:border-emerald-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
-                        >
-                            {/* Glow effect */}
-                            <div className="absolute inset-0 rounded-xl overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {/* Content */}
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                    {/* Header with icon and badge */}
+                    <div className="flex items-start justify-between mb-6">
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${cert.gradient} flex items-center justify-center shadow-xl group-hover:shadow-purple-500/50 transition-all duration-300 group-hover:scale-110`}>
+                            <span className="text-2xl">🏆</span>
+                        </div>
+                        <div className="inline-flex items-center gap-1 bg-gradient-to-r from-purple-500/20 to-emerald-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-3 py-1">
+                            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                            <span className="text-xs text-emerald-400 font-bold">VERIFIED</span>
+                        </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors duration-300 leading-tight">
+                        {cert.title}
+                    </h3>
+
+                    {/* Issuer with enhanced styling */}
+                    <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                            <div className="w-1 h-8 bg-gradient-to-b from-purple-400 via-emerald-400 to-blue-500 rounded-full" />
+                            <div>
+                                <p className="text-gray-300 font-medium text-sm leading-tight">{cert.issuer}</p>
+                                <p className="text-xs text-gray-500">Issuing Organization</p>
                             </div>
+                        </div>
+                    </div>
 
-                            {/* Card content */}
-                            <div className="relative z-10 flex flex-col h-full">
-                                {/* Icon */}
-                                <div className="w-14 h-14 mb-5 rounded-lg bg-gradient-to-br from-purple-500 to-emerald-500 flex items-center justify-center text-white text-2xl shadow-lg">
-                                    🎓
-                                </div>
+                    {/* Date with timeline */}
+                    <div className="flex items-center gap-3 mb-6 mt-auto">
+                        <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-emerald-400 rounded-full shadow-lg shadow-purple-500/50" />
+                        <div className="flex-1 h-0.5 bg-gradient-to-r from-purple-400/50 to-transparent" />
+                        <span className="text-xs text-gray-400 font-medium bg-gray-800/50 px-3 py-1 rounded-full">
+                            {cert.date}
+                        </span>
+                    </div>
 
-                                {/* Title */}
-                                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
-                                    {title}
-                                </h3>
+                    {/* View credential button */}
+                    <div className={`flex items-center justify-between p-4 rounded-2xl bg-gray-800/30 border border-gray-700/50 group-hover:bg-purple-500/10 group-hover:border-purple-400/50 transition-all duration-300 ${isHovered ? 'transform translate-y-0' : 'transform translate-y-2 opacity-80'}`}>
+                        <span className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors duration-300">
+                            View Credential
+                        </span>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-emerald-500 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                            <ExternalLinkIcon />
+                        </div>
+                    </div>
 
-                                {/* Issuer */}
-                                <p className="text-sm text-gray-300 mb-3">{issuer}</p>
+                    {/* Hover overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br from-purple-500/10 to-emerald-500/10 rounded-3xl transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+                </div>
+            </a>
+        </div>
+    );
+};
 
-                                {/* Date */}
-                                <p className="text-xs text-gray-400 mt-auto mb-3">{date}</p>
+const ModernFloatingCertifications = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-                                {/* View link */}
-                                <div className="flex items-center text-sm text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span>View credential</span>
-                                    <FiExternalLink className="ml-2" />
-                                </div>
-                            </div>
-                        </a>
-                    </motion.div>
-                ))}
+    const certifications = [
+        {
+            title: "Full Stack Web Development Experience",
+            issuer: "Mazhar Enterprises Pvt Ltd",
+            date: "Mar 2025",
+            link: "https://drive.google.com/file/d/1UxUU4T7c3L4lwQq3KCTiIj1xDY0WDv6D/view?usp=drive_link",
+            gradient: "from-purple-500 to-pink-600"
+        },
+        {
+            title: "Full Stack Web Development Bootcamp",
+            issuer: "Udemy",
+            date: "Feb 2022",
+            link: "https://drive.google.com/file/d/1zgmwvxVtHANW_B3fz2PZIacnZnA0_C30/view?usp=drive_link",
+            gradient: "from-blue-500 to-cyan-600"
+        },
+        {
+            title: "Full Stack Web Development Experience",
+            issuer: "E-Digital Pakistan",
+            date: "Jun 2025",
+            link: "https://drive.google.com/file/d/1a8w3vnoyCXfKKyzkZSkaeuA-jeYwfEej/view?usp=drive_link",
+            gradient: "from-emerald-500 to-teal-600"
+        },
+        {
+            title: "Certificate of Appreciation",
+            issuer: "Abdul Wali Khan University",
+            date: "December 2022",
+            link: "https://drive.google.com/file/d/1GZNFq7O6LjxW38yxsKDPmW1XKffrTaJD/view?usp=drive_link",
+            gradient: "from-orange-500 to-red-600"
+        },
+    ];
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    return (
+        <section className="relative min-h-screen overflow-hidden  py-20">
+            {/* Animated background */}
+            <div className="absolute inset-0">
+                {/* Grid pattern */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+
+                {/* Floating orbs */}
+                <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse" />
+                <div className="absolute bottom-20 right-20 w-80 h-80 bg-emerald-500/10 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
+
+                {/* Radial gradient overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.05)_0%,transparent_70%)]" />
             </div>
 
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                {/* Header */}
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500/10 to-emerald-500/10 backdrop-blur-sm border border-purple-500/20 rounded-full px-8 py-3 mb-8">
+                        <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse" />
+                        <span className="text-purple-400 text-sm font-bold tracking-widest uppercase">Professional Credentials</span>
+                        <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse" />
+                    </div>
+
+                    <h2 className="text-5xl md:text-7xl font-black mb-6">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-emerald-300">
+                            Verified
+                        </span>
+                        <br />
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-emerald-500 to-cyan-500">
+                            Certifications
+                        </span>
+                    </h2>
+
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Professional credentials demonstrating expertise and continuous learning in cutting-edge technologies
+                    </p>
+                </div>
+
+                {/* Floating certifications grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                    {certifications.map((cert, index) => (
+                        <FloatingCertCard
+                            key={index}
+                            cert={cert}
+                            index={index}
+                            mousePosition={mousePosition}
+                        />
+                    ))}
+                </div>
+
+
+
+
+            </div>
         </section>
     );
 };
 
-export default Certifications;
+export default ModernFloatingCertifications;

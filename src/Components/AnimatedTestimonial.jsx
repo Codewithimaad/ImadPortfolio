@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import HaroonImage from '../assets/Images/Haroon.jpg';
+import AyubImage from '../assets/Images/Ayub.jpg'
 
 const ModernTestimonials = () => {
     const [active, setActive] = useState(0);
@@ -12,7 +14,15 @@ const ModernTestimonials = () => {
             role: "Digital Entrepreneur",
             company: "Rebel Media.",
             quote: "I hired Imad to build my landing page and backend for a digital course, and he nailed it. Clean design, smooth database setup, and flawless integrations, Google Analytics, Google Ads, Facebook Ads, email automation, and WhatsApp API. Everything works perfectly, and the process was fast, professional, and stress-free. Highly recommend Imad for a custom built website.",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b332c937?w=400&h=400&fit=crop&crop=face"
+            image: HaroonImage
+        },
+
+        {
+            author: "Muhammad Ayub Khan",
+            role: "Technical Architect",
+            company: "GEER Information & Technology",
+            quote: "We worked with Imad on a key project, and he delivered outstanding results. His full stack skills, attention to detail, and problem-solving were excellent. He met deadlines and maintained clear, professional communication. Highly recommended for any development project.",
+            image: AyubImage
         },
 
     ];
@@ -35,15 +45,16 @@ const ModernTestimonials = () => {
     return (
         <div className="min-h-screen py-20 px-2 md:px-4">
             <div className="mx-auto max-w-7xl">
-                {/* Header Section */}
+                {/* Client Testimonials Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        What Our Clients Say
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+                        What Our Clients Are Saying
                     </h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-                        Don't just take our word for it. Here's what industry leaders have to say about our experience.
+                    <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Hear directly from industry leaders and valued clients about their experiences working with us.
                     </p>
                 </div>
+
 
                 {/* Main Testimonial Card */}
                 <div className="relative">
@@ -53,7 +64,7 @@ const ModernTestimonials = () => {
                             <div className="order-2 lg:order-1">
                                 <div className="mb-8">
                                     <Quote className="w-12 h-12 text-blue-400 mb-6" />
-                                    <p className="text-lg md:text-xl font-light text-white leading-relaxed mb-8">
+                                    <p className="text-sm md:text-xl font-light text-white leading-relaxed mb-8">
                                         "{testimonials[active].quote}"
                                     </p>
                                 </div>

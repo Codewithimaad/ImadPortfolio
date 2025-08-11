@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className='flex items-center justify-center lg:justify-between py-6 mt-5 md:mt-20'>
+        <nav className='flex items-center justify-center lg:justify-between py-6 mt-14 md:mt-20'>
             <div className='flex-shrink-0 items-center hidden lg:flex'>
                 <a href="/" aria-label='Home' className='text-2xl font-bold md:text-3xl lg:text-5xl'>
                     I <span className='text-2xl md:text-3xl lg:text-5xl text-green-500'>MAD.</span>
