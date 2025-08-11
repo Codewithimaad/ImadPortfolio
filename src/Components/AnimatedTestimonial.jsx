@@ -53,7 +53,7 @@ const ModernTestimonials = () => {
                             <div className="order-2 lg:order-1">
                                 <div className="mb-8">
                                     <Quote className="w-12 h-12 text-blue-400 mb-6" />
-                                    <p className="text-lg md:text-3xl font-light text-white leading-relaxed mb-8">
+                                    <p className="text-lg md:text-xl font-light text-white leading-relaxed mb-8">
                                         "{testimonials[active].quote}"
                                     </p>
                                 </div>
