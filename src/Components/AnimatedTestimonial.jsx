@@ -43,7 +43,7 @@ const ModernTestimonials = () => {
     }, [autoplay]);
 
     return (
-        <div className="min-h-screen py-20 px-2 md:px-4">
+        <div className="min-h-screen  py-20 px-2 md:px-4">
             <div className="mx-auto max-w-7xl">
                 {/* Client Testimonials Header */}
                 <div className="text-center mb-16">
