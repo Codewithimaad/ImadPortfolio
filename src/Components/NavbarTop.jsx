@@ -168,7 +168,7 @@ const ModernNavbarTop = () => {
         <>
             <nav
                 className={`fixed mb-20 w-full z-50 transition-all duration-700 ease-out ${scrolled
-                    ? 'top-6 left-6 right-6 w-auto'
+                    ? 'top-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl'
                     : 'top-0 left-0 right-0'
                     }`}
             >
