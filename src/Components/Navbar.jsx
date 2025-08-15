@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import MobileMenu from './MobileMenu';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Navbar = () => {
     const [openSubmenu, setOpenSubmenu] = useState(null);
-
-
+    const [isOpen, setIsOpen] = useState(false);
 
     // Smooth scroll handler
     const handleScroll = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setIsOpen(false);  // Close mobile menu on link click
-            setOpenSubmenu(null);
-        }
+        smoothScrollTo(id, { offset: 100 }); // 100px offset for navbar
+        setIsOpen(false);  // Close mobile menu on link click
+        setOpenSubmenu(null);
     };
 
     return (

@@ -93,7 +93,7 @@ const About = () => {
                         transition={{ duration: 1, delay: 1.1 }}
                     >
                         <a
-                            href="https://drive.google.com/file/d/1Bx0Swbuxn0aF40CcVzrrGlhFBLPfdM4j/view?usp=drive_link"
+                            href="https://drive.google.com/file/d/1oSXKRFuFvgFBt-gpR7_5d1GyAlKaX-cC/view?usp=drive_link"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-full py-2 md:py-3 lg:py-3 sm:px-8 px-10 text-lg shadow-lg transition-all duration-300 ease-in-out hover:from-purple-700 hover:to-purple-900 hover:shadow-purple-500/50"

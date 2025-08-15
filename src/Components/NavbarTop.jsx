@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 // Unicode icons since react-icons isn't available
 const ChevronDown = ({ isRotated }) => (
@@ -152,12 +153,9 @@ const ModernNavbarTop = () => {
     }, []);
 
     const handleScrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-            setIsOpen(false);
-            setOpenSubmenu(null);
-        }
+        smoothScrollTo(id, { offset: 100 }); // 100px offset for navbar
+        setIsOpen(false);
+        setOpenSubmenu(null);
     };
 
     const toggleSubmenu = (index) => {
