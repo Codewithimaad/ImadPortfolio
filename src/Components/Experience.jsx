@@ -3,32 +3,47 @@ import { motion } from "framer-motion";
 import { Briefcase, MapPin, CalendarDays, ChevronRight } from "lucide-react";
 
 const experiences = [
-    {
-        role: "Full Stack Web Developer",
-        company: "Mazhar Enterprises Pvt Ltd",
-        duration: "Jan 2022 – Feb 2025",
-        location: "Peshawar, Pakistan",
-        points: [
-            "Built responsive web apps using React and Next.js, increasing user engagement by 30%",
-            "Developed RESTful APIs with Node.js, Express.js, and MongoDB",
-            "Optimized components to reduce page load time by 30%",
-            "Designed accessible UI with Tailwind CSS ensuring cross-browser compatibility",
-            "Collaborated with teams in Agile environment to build scalable solutions"
-        ],
-    },
-    {
-        role: "Full Stack Web Developer (Remote)",
-        company: "E-Digital Pakistan Pvt Ltd",
-        duration: "Jan 2025 – Jun 2025",
-        location: "Peshawar, Pakistan",
-        points: [
-            "Developed Food App and E-Tutor Web App using React & Node.js",
-            "Enhanced UI/UX with Tailwind CSS, improving experience by 30%",
-            "Built backend APIs with Express and MongoDB for efficient data handling",
-            "Delivered scalable, cross-platform solutions through Agile practices"
-        ],
-    },
+  {
+    role: "Full Stack Web Developer",
+    company: "Eccentric Technology",
+    duration: "Dec 2023 – Present",
+    location: "Riyadh, Saudi Arabia",
+    points: [
+      "Designed and deployed scalable SaaS applications with React, Node.js, and MongoDB",
+      "Implemented role-based authentication and secure API integrations, improving system security",
+      "Integrated third-party services (payment gateways, email APIs, and cloud storage)",
+      "Optimized frontend performance, reducing page load times by 40%",
+      "Mentored junior developers and conducted code reviews to maintain coding standards"
+    ],
+  },
+  {
+    role: "Full Stack Web Developer",
+    company: "GEER Information & Communication Technology",
+    duration: "Aug 2022 – Nov 2023",
+    location: "Riyadh, Saudi Arabia",
+    points: [
+      "Developed enterprise-level dashboards for data analytics using React, Chart.js, and Tailwind CSS",
+      "Built real-time chat and notification features with WebSockets",
+      "Deployed microservices-based backend on AWS for scalability and reliability",
+      "Streamlined CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by 60%",
+      "Collaborated with cross-functional teams to deliver projects under Agile methodologies"
+    ],
+  },
+  {
+    role: "Full Stack Web Developer",
+    company: "Mazhar Enterprises Pvt Ltd",
+    duration: "Feb 2020 – Jun 2022",
+    location: "Peshawar, Pakistan",
+    points: [
+      "Developed e-commerce and ERP web applications using React, Next.js, and Node.js",
+      "Implemented dynamic dashboards with data visualization tools (Recharts, D3.js)",
+      "Optimized backend queries and caching, improving API response time by 35%",
+      "Integrated payment systems and automated invoice generation modules",
+      "Worked closely with product managers to gather requirements and deliver tailored solutions"
+    ],
+  },
 ];
+
 
 const Experience = () => {
     return (

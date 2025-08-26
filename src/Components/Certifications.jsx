@@ -119,12 +119,33 @@ const ModernFloatingCertifications = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const certifications = [
+          {
+            title: "Full Stack Web Development Experience",
+            issuer: "Eccentric Technologies",
+            date: "Dec 2023 - Present",
+            link: "https://drive.google.com/file/d/1zX1vCF283l7bMmrzbo1FYj-6w3M02lID/view?usp=drive_link",
+            gradient: "from-purple-500 to-yellow-600"
+        },
+        {
+            title: "Full Stack Web Development Experience",
+            issuer: "GEER Information & Communication Technology",
+            date: "Aug 2022 - Nov 2023",
+            link: "#",
+            gradient: "from-emerald-500 to-teal-600"
+        },
         {
             title: "Full Stack Web Development Experience",
             issuer: "Mazhar Enterprises Pvt Ltd",
-            date: "Mar 2025",
+            date: "Feb 2020 - Jun 2022",
             link: "https://drive.google.com/file/d/1UxUU4T7c3L4lwQq3KCTiIj1xDY0WDv6D/view?usp=drive_link",
             gradient: "from-purple-500 to-pink-600"
+        },
+        {
+            title: "Full Stack Web Development Experience",
+            issuer: "E-Digital Pakistan Pvt (Remote)",
+            date: "Jun 2025",
+            link: "https://drive.google.com/file/d/1a8w3vnoyCXfKKyzkZSkaeuA-jeYwfEej/view?usp=drive_link",
+            gradient: "from-purple-500 to-red-600"
         },
         {
             title: "Full Stack Web Development Bootcamp",
@@ -132,13 +153,6 @@ const ModernFloatingCertifications = () => {
             date: "Feb 2022",
             link: "https://drive.google.com/file/d/1zgmwvxVtHANW_B3fz2PZIacnZnA0_C30/view?usp=drive_link",
             gradient: "from-blue-500 to-cyan-600"
-        },
-        {
-            title: "Full Stack Web Development Experience",
-            issuer: "E-Digital Pakistan",
-            date: "Jun 2025",
-            link: "https://drive.google.com/file/d/1a8w3vnoyCXfKKyzkZSkaeuA-jeYwfEej/view?usp=drive_link",
-            gradient: "from-emerald-500 to-teal-600"
         },
         {
             title: "Certificate of Appreciation",
