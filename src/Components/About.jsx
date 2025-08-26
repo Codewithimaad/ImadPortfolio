@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import aboutImg from '../assets/Images/Imad.jpg'
+import aboutImg from '../assets/Images/IMAD.jpg'
 
 const About = () => {
     return (
