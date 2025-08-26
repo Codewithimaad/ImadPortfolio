@@ -1,6 +1,5 @@
 import React from "react";
 import AnimatedTestimonials from "./AnimatedTestimonial";
-import Manager from '../assets/Images/Imad.png'
 
 const TestimonialsSection = () => {
 
