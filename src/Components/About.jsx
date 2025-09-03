@@ -55,7 +55,7 @@ const About = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                     >
                         Hello! I’m <span className="text-green-400 font-semibold">Imad Hussain Khan</span>, a
-                        full-stack web developer with over 3.5 years of experience. I’m passionate about
+                        full-stack web developer with over 5 years of experience. I’m passionate about
                         crafting responsive, user-friendly, and scalable web applications that bring ideas to
                         life.
                     </motion.p>
