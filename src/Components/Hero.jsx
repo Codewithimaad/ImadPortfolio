@@ -61,7 +61,7 @@ const Hero = () => {
                         <motion.p
                             variants={childVariants}
                             className="my-2 max-w-lg py-6 sm:text-base lg:text-xl leading-relaxed tracking-tighter">
-                            As a passionate Full Stack Web Developer with 3.5 years of experience, I specialize in crafting responsive and scalable web applications using the MERN stack, Next.js, and Tailwind CSS. In addition to development, I possess hands-on knowledge in IT support, including hardware/software troubleshooting, basic networking, and user assistance. I thrive in fast-paced, collaborative environments delivering user-focused solutions in both development and technical support domains.
+                            As a passionate Full Stack Web Developer with 5 years of experience, I specialize in crafting responsive and scalable web applications using the MERN stack, Next.js, and Tailwind CSS. In addition to development, I possess hands-on knowledge in IT support, including hardware/software troubleshooting, basic networking, and user assistance. I thrive in fast-paced, collaborative environments delivering user-focused solutions in both development and technical support domains.
                         </motion.p>
 
                         <motion.a
