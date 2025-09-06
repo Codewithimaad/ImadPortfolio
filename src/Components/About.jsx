@@ -7,7 +7,7 @@ const About = () => {
         <section
             id="about"
             className="relative py-20 px-0 text-white rounded-lg"
-        >
+        >  
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-900 opacity-20"></div>
 

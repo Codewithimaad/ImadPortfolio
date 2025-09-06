@@ -7,6 +7,7 @@ import foodPriceImage from '../assets/FoodPrice.png';
 import EcommerceImage from '../assets/Images/EcommerceImage.png';
 import HerbieImage from '../assets/Herbie.png';
 import CompanyProfile from '../assets/Company.png';
+import BRBImage from '../assets/BRB.png';
 
 const Projects = () => {
     const projectData = [
@@ -49,7 +50,16 @@ const Projects = () => {
             githubLink: "https://github.com/Codewithimaad/Eccentric-Technologies",
             liveLink: "https://eccentric-technologies.vercel.app/",
             tags: ["MERN", "Corporate Website", "Company Project"]
-        }
+        },
+      {
+    title: "Business Registration Portal",
+    description: "A modern, responsive corporate portal with a dashboard, showcasing Business Registr’s services and portfolio, tailored for Saudi Arabia’s dynamic business landscape.",
+    image: BRBImage,
+    githubLink: "https://github.com/Codewithimaad/BRB",
+    liveLink: "https://business-portal-mauve.vercel.app/",
+    tags: ["MERN", "Corporate Website", "Company Project"]
+}
+
     ];
 
     // Animation variants
